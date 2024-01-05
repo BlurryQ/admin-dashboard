@@ -184,3 +184,131 @@ body {
     padding-left: 1.2rem;
     padding-top: 0.1rem;
 }
+
+.profile {
+    background: url(icons/profile.svg) no-repeat;
+    padding-left: 1.2rem;
+    padding-top: 0.1rem;
+}
+
+.messages {
+    background: url(icons/messages.svg) no-repeat;
+    padding-left: 1.2rem;
+    padding-top: 0.1rem;
+}
+
+.history {
+    background: url(icons/history.svg) no-repeat;
+    padding-left: 1.2rem;
+    padding-top: 0.1rem;
+}
+
+.tasks {
+    background: url(icons/tasks.svg) no-repeat;
+    padding-left: 1.2rem;
+    padding-top: 0.1rem;
+}
+
+.communities {
+    background: url(icons/communities.svg) no-repeat;
+    padding-left: 1.3rem;
+    padding-top: 0.2rem;
+    margin-left: -2px;
+}
+
+.settings {
+    background: url(icons/settings.svg) no-repeat;
+    padding-left: 1.2rem;
+    padding-top: 0.1rem;
+}
+
+.support {
+    background: url(icons/support.svg) no-repeat;
+    padding-left: 1.3rem;
+    padding-top: 0.2rem;
+    margin-left: -2px;
+}
+
+.privacy {
+    background: url(icons/privacy.svg) no-repeat;
+    padding-left: 1.2rem;
+    padding-top: 0.1rem;
+}
+
+.search {
+    background: url(icons/search.svg) no-repeat;
+    padding-left: 1.2rem;
+    padding-top: 0.1rem;
+}
+
+.history {
+    background: url(icons/history.svg) no-repeat;
+    padding-left: 1.2rem;
+    padding-top: 0.1rem;
+}
+
+.notifications {
+    background: url(icons/notifications.svg) no-repeat;
+    padding-left: 1.2rem;
+    padding-top: 0.1rem;
+}
+
+.fav {
+    background: url(icons/fav.svg) no-repeat;
+    padding: 10px;
+}
+
+.watch {
+    background: url(icons/watch.svg) no-repeat;
+    padding: 10px;
+}
+
+.share-icon {
+    background: url(icons/share.svg) no-repeat;
+    padding: 10px;
+}
+
+.user {
+    background: url(users/user.svg) no-repeat center;
+    height: clamp(55px, 10vw, 65px);
+    width: clamp(55px, 10vw, 65px);
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.sml-user {
+    background: url(users/sml-users/user.svg) no-repeat center;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.user-1 {
+    background: url(users/sml-users/user-1.svg) no-repeat center;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.user-2 {
+    background: url(users/sml-users/user-2.svg) no-repeat center;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.user-3 {
+    background: url(users/sml-users/user-3.svg) no-repeat center;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.user-4 {
+    background: url(users/sml-users/user-4.svg) no-repeat center;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.sml {
+    height: clamp(30px, 5vw, 35px);
+    width: clamp(30px, 5vw, 35px);
+    border: 2px solid black;
+    border-radius: 100%;
+}
