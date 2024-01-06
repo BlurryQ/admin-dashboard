@@ -64,7 +64,7 @@ table {
 
 body {
     display: grid;
-    grid: 1fr 5fr / 1fr 4fr;
+    grid: 1fr 5fr / clamp(10rem, 15vw, 15rem) 1fr;
     height: 100vh;
 }
 
@@ -74,7 +74,7 @@ body {
 
 .header {
     color: var(--dark-text);
-    padding: 2vw;
+    padding: 1vw;
     grid-column: 2;
     background-color: var(--header-color);
     box-shadow: 5px 5px 5px var(--shadow-color);
@@ -84,14 +84,23 @@ body {
 .header-top {
     display: grid;
     grid: 1fr / 1fr 3fr repeat(3, 1fr);
-    margin-bottom: 50px;
+    margin-bottom: min(3vw, 1.5rem);
 }
 
 .header-bottom {
     display: grid;
     grid: 1fr / 1fr 3fr repeat(3, 1fr);
     align-items: center;
-    gap: max(2rem, 1vw);
+    gap: max(1rem, 0.5vw);
+}
+
+input {
+    background-color: var(--back-color);
+    border-radius: 20px;
+    border: none;
+    align-self: center;
+    height: 1.5rem;
+    width: 40vw;
 }
 
 .new,
@@ -102,28 +111,46 @@ body {
     padding: max(0.8rem, .8vw) max(1.5rem, 1.5vw);
     background-color: var(--sidebar-color);
     border-radius: 15rem;
+    width: 6ch;
+    text-align: center;
+}
+
+.new {
+    justify-self: right;
+}
+
+.upload {
+    justify-self: center;
+}
+
+.share {
+    justify-self: left;
 }
 
 .sidebar {
-    padding: 2vw;
+    padding: clamp(0.1rem, 1vw, 1rem);
     background-color: var(--sidebar-color);
     color: var(--light-text);
     grid-column: 1;
     grid-row: 1 / 3;
 
     display: grid;
-    grid: 100px repeat(2, 1fr) / 1fr;
+    grid: 100px repeat(2, 1fr) / 50px 1fr;
 }
 
 .sidebar-top {
     display: grid;
-    grid: repeat(6, 1fr) / 1fr;
+    grid: repeat(6, 1fr) / 40px 1fr;
     margin-bottom: 50px;
+    grid-column: span 2;
 }
 
 .sidebar-bottom {
     display: grid;
-    grid: repeat(3, 1fr) / 1fr;
+    grid: repeat(3, 1fr) / 40px 1fr;
+    grid-column: span 2;
+    align-self: start;
+    gap: 2rem 0rem;
 }
 
 .container {
@@ -139,7 +166,7 @@ body {
     grid-area: 1 / 1 / 3 / 2 ;
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 30vw));
-    grid-template-rows: repeat(auto-fill, minmax(200px, 30vh));
+    grid-template-rows: repeat(auto-fill, minmax(320px, 30vh));
     gap: 2vw;
 }
 
@@ -149,6 +176,24 @@ body {
     border-radius: 10px;
     padding: 1vw;
     border-left: 1vw solid var(--flair-color);
+
+    display: grid;
+    grid-template-columns: 3fr repeat(3, 1fr);
+    grid-template-rows: 1fr minmax(15rem, 3fr) 1fr;
+}
+
+.content-header {
+    align-self: center;
+}
+
+.content-text {
+    grid-column: span 4;
+    overflow: hidden;
+}
+
+.project-icons {
+    grid-column: 2 / 3;
+    display: block;
 }
 
 .info {
@@ -173,99 +218,67 @@ body {
 
 /* icons */
 
-.dashboard {
+.dashboard-icon {
     background: url(icons/dashboard.svg) no-repeat;
-    padding-left: 2.7rem;
-    padding-top: 1rem;
 }
 
-.home {
-    background: url(icons/home.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.home-icon {
+    background: url(icons/home.svg) no-repeat center;
 }
 
-.profile {
-    background: url(icons/profile.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.profile-icon {
+    background: url(icons/profile.svg) no-repeat center;
 }
 
-.messages {
-    background: url(icons/messages.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.messages-icon {
+    background: url(icons/messages.svg) no-repeat center;
 }
 
-.history {
-    background: url(icons/history.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.history-icon {
+    background: url(icons/history.svg) no-repeat center;
 }
 
-.tasks {
-    background: url(icons/tasks.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.tasks-icon {
+    background: url(icons/tasks.svg) no-repeat center;
 }
 
-.communities {
-    background: url(icons/communities.svg) no-repeat;
-    padding-left: 1.3rem;
-    padding-top: 0.2rem;
-    margin-left: -2px;
+.communities-icon {
+    background: url(icons/communities.svg) no-repeat center;
 }
 
-.settings {
-    background: url(icons/settings.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.settings-icon {
+    background: url(icons/settings.svg) no-repeat center;
 }
 
-.support {
-    background: url(icons/support.svg) no-repeat;
-    padding-left: 1.3rem;
-    padding-top: 0.2rem;
-    margin-left: -2px;
+.support-icon {
+    background: url(icons/support.svg) no-repeat center;
 }
 
-.privacy {
-    background: url(icons/privacy.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.privacy-icon {
+    background: url(icons/privacy.svg) no-repeat center;
 }
 
-.search {
-    background: url(icons/search.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.search-icon {
+    background: url(icons/search.svg) no-repeat center;
 }
 
-.history {
-    background: url(icons/history.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.notifications-icon {
+    background: url(icons/notifications.svg) no-repeat right;
 }
 
-.notifications {
-    background: url(icons/notifications.svg) no-repeat;
-    padding-left: 1.2rem;
-    padding-top: 0.1rem;
+.fav-icon {
+    background: url(icons/fav.svg) no-repeat center;
+    grid-column: 2 / 3;
 }
 
-.fav {
-    background: url(icons/fav.svg) no-repeat;
-    padding: 10px;
-}
-
-.watch {
-    background: url(icons/watch.svg) no-repeat;
-    padding: 10px;
+.watch-icon {
+    background: url(icons/watch.svg) no-repeat center;
+    grid-column: 3 / 4;
 }
 
 .share-icon {
-    background: url(icons/share.svg) no-repeat;
-    padding: 10px;
+    background: url(icons/share.svg) no-repeat center;
+    grid-column: 4 / 5;
 }
 
 .user {
@@ -274,12 +287,22 @@ body {
     width: clamp(55px, 10vw, 65px);
     border: 2px solid black;
     border-radius: 100%;
+    justify-self: right;
 }
 
 .sml-user {
     background: url(users/sml-users/user.svg) no-repeat center;
-    border: 2px solid black;
-    border-radius: 100%;
+    justify-self: center;
+}
+
+.username {
+    justify-self: center;
+    align-self: center;
+}
+
+.greeting-username {
+    justify-self: left;
+    align-self: center;
 }
 
 .user-1 {
@@ -311,4 +334,28 @@ body {
     width: clamp(30px, 5vw, 35px);
     border: 2px solid black;
     border-radius: 100%;
+}
+
+/* sidebar */
+
+.dashboard-icon,
+.dashboard {
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.dashboard {
+    margin-top: 1.2rem;
+    margin-left: 0.5rem; 
+}
+.home,
+.profile,
+.messages,
+.history,
+.tasks,
+.communities,
+.settings,
+.support,
+.privacy {
+    align-self: center;
 }
