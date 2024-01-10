@@ -99,3 +99,15 @@ function removeBorder(id) {
         content.classList.remove("addUnderline")
     }
 }
+
+
+
+/* 
+Trending
+make links on icons underline @user
+sort sizing to stop overspill
+
+
+index announcements > items > trending > items
+may solve gap in headings
+*/
