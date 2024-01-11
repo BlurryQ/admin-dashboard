@@ -28,7 +28,10 @@ function addUnderline(id) {
 function removeUnderline(id) {
     const blockToChange = document.getElementById(id);
     const contentID = id + "-content"
-    blockToChange.style.cssText = ""
+    const contentToChange = document.getElementById(contentID);
+    blockToChange.style.cssText = "";
+    blockToChange.style.cssText = "";
+    contentToChange.style.cssText = "";
 }
 
 const links = document.querySelectorAll("a");
@@ -103,11 +106,15 @@ function removeBorder(id) {
 
 
 /* 
-Trending
-make links on icons underline @user
-sort sizing to stop overspill
+header
+work out header columns to approx 5/6fr 
+make content fit both phones and desktop
 
+dark mode
+background: flair - container 
+black header
+background: black - content-block/ announcement & trenfing
+color: white - everywhere
+colour: lightgrey - content-text/ announcement-content
 
-index announcements > items > trending > items
-may solve gap in headings
 */
