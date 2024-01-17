@@ -1,3 +1,18 @@
+const root = document.documentElement;
+root.className = "light";
+
+const themeToggle = document.getElementById("toggle-theme");
+themeToggle.addEventListener("click", () => {
+    themeToggle.style.cssText = "";
+    toggleTheme();
+    })
+
+function toggleTheme() {
+    const updateTheme = root.className === "dark" ? "light" : "dark";
+    root.className = updateTheme;
+}
+
+
 const contentBlock = document.querySelectorAll(".content-block");
 contentBlock.forEach(item => {
     item.addEventListener("mouseover", () => {
