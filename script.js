@@ -32,11 +32,20 @@ function addUnderline(id) {
     const blockToChange = document.getElementById(id);
     const contentID = id + "-content"
     const contentToChange = document.getElementById(contentID);
+    const currentTheme = root.className;
+
+    let lineColor = "white" 
+    if(currentTheme === "light") {
+        lineColor = "white";
+    } else {
+        lineColor = "black";
+    }
+
     blockToChange.style.cssText = ` text-decoration: underline;
                                     text-decoration-color: var(--flair-color);
                                     text-decoration-thickness: 3px;`
     contentToChange.style.cssText = `text-decoration: underline;
-                                    text-decoration-color: white;
+                                    text-decoration-color: ${lineColor};
                                     text-decoration-thickness: 3px;`
 }
 
@@ -117,19 +126,3 @@ function removeBorder(id) {
         content.classList.remove("addUnderline")
     }
 }
-
-
-
-/* 
-header
-work out header columns to approx 5/6fr 
-make content fit both phones and desktop
-
-dark mode
-background: flair - container 
-black header
-background: black - content-block/ announcement & trenfing
-color: white - everywhere
-colour: lightgrey - content-text/ announcement-content
-
-*/
