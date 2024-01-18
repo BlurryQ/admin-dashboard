@@ -123,6 +123,7 @@ body {
 .header {
     color: var(--dark-text);
     padding: 1vw;
+    padding-bottom: 4vh;
     grid-column: 2;
     background-color: var(--header-color);
     box-shadow: 5px 5px 5px var(--shadow-color);
@@ -163,7 +164,7 @@ input {
 .share {
     justify-self: center;
     color: white;
-    padding: max(0.6rem, 0.6vw);
+    padding: max(0.8rem, 0.8vw);
     width: 6ch;
     background: linear-gradient(310deg, var(--sidebar-color) 65%, var(--flair-color));
     border-radius: 15rem;
@@ -226,7 +227,7 @@ input {
 .content {
     grid-area: 2 / 1 / 6 / 2 ;
     display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 30vw));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-template-rows: repeat(3, 1fr);
     gap: 2vw;
 }
@@ -270,7 +271,7 @@ input {
     grid-area: 1 / 2 / 3 / 3 ;
     display: grid;
     grid-template-rows: 2rem min-content 2rem min-content;
-    grid-template-columns: minmax(150px,20vw);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .announcements-header {
