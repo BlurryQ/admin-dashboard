@@ -132,20 +132,32 @@ body {
 
 .header-top {
     display: grid;
-    grid: 1fr / 5vw clamp(15rem, 40vw, 600px)  5vw 7vw 10vw 5vw;
+    grid: 1fr / 5vw 1fr 25vw;
     margin-bottom: min(3vw, 1.5rem);
-    gap: max(1.5rem, 0.5vw);
+    gap: 1vw 2vw;
+}
+
+.header-top-right {
+    display: flex;
+    gap: 1vw 2vw;
 }
 
 .header-bottom {
     display: grid;
-    grid: 1fr / minmax(4rem, 8vw) clamp(15rem, 40vw, 600px) repeat(3, 6vw);
+    grid: 2fr / minmax(4rem, 8vw) 1fr 25vw;
     align-items: center;
-    gap: max(1.5rem, 0.5vw);
+    gap: 1vw 2vw;
+
+}
+
+.greeting,
+.username {
+    font-size: calc(0.8rem + 0.6vw);
 }
 
 .greeting-username {
-    font-size: 1.5rem;
+    font-size: calc(1rem + 0.7vw);
+    grid-area: 2 / 2;
 }
 
 input {
@@ -154,17 +166,22 @@ input {
     border: none;
     align-self: center;
     height: 1.5rem;
-    width: minmax(5rem, 30vw);
     margin-left: 1rem;
     padding-left: 1ch;;
+}
+
+.add-content {
+    display: flex;
+    gap: 5%;
+    grid-row: span 2;
+    justify-content: center;
 }
 
 .new,
 .upload,
 .share {
-    justify-self: center;
     color: white;
-    padding: max(0.8rem, 0.8vw);
+    padding: calc(0.4rem + 0.4vw);
     width: 6ch;
     background: linear-gradient(310deg, var(--sidebar-color) 65%, var(--flair-color));
     border-radius: 15rem;
@@ -252,6 +269,7 @@ input {
     grid-column: span 4;
     overflow: hidden;
     color: var(--grey-text);
+    font-size: calc(0.625rem + 0.4vw);
 }
 
 .content-header,
@@ -312,7 +330,8 @@ input {
 .announcement-1-content,
 .announcement-2-content,
 .announcement-3-content {
-    color: var(--grey-text);   
+    color: var(--grey-text);  
+    font-size: calc(0.625rem + 0.4vw); 
 }
 
 .trending {
@@ -411,6 +430,7 @@ input {
     border: 2px solid var(--dark-text);
     border-radius: 100%;
     justify-self: right;
+    grid-row: span 2;
 }
 
 .sml-user {
