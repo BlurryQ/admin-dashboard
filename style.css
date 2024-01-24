@@ -167,8 +167,6 @@ input {
     border: none;
     align-self: center;
     height: 1.5rem;
-    margin-left: 1rem;
-    padding-left: 1ch;;
 }
 
 .add-content {
@@ -407,6 +405,7 @@ input {
 
 .notifications-icon {
     background: var(--notifications) no-repeat right;
+    padding: 10px;
 }
 
 .fav-icon {
