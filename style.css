@@ -62,7 +62,7 @@ a:hover {
 
 :root {
     font-family: "Roboto", system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --padding: max(1rem, 2.5vw)
+    --padding: max(1vw, 1rem)
 }
 
 :root.light {
@@ -120,6 +120,10 @@ body {
     font-size: 1.3rem;
 }
 
+#hamburger {
+    display: none
+}
+
 .header {
     color: var(--dark-text);
     padding: 1vw;
@@ -131,9 +135,9 @@ body {
 }
 
 .header-top {
-    display: grid;
-    grid: 1fr / 5vw 1fr 25vw;
-    margin-bottom: min(3vw, 1.5rem);
+    display: flex;
+/*     grid: 1fr / 5vw 1fr 25vw; */
+    margin-bottom: 1rem;
     gap: 1vw 2vw;
 }
 
@@ -144,11 +148,23 @@ body {
 }
 
 .header-bottom {
-    display: grid;
-    grid: 2fr / minmax(4rem, 8vw) 1fr 25vw;
+    display: flex;
+/*     grid: 2fr / minmax(4rem, 8vw) 1fr 25vw; */
+justify-content: space-around;
     align-items: center;
     gap: 1vw 2vw;
 
+}
+
+.greeting-message {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.greeting {
+    position: relative;
+    left: 3rem;
 }
 
 .greeting,
@@ -158,7 +174,8 @@ body {
 
 .greeting-username {
     font-size: calc(1rem + 0.7vw);
-    grid-area: 2 / 2;
+/*     grid-area: 2 / 2; */
+    align-self: flex-end;
 }
 
 input {
@@ -167,6 +184,8 @@ input {
     border: none;
     align-self: center;
     height: 1.5rem;
+    width: 50vw;
+    margin-left: -4vw;
 }
 
 .add-content {
@@ -201,7 +220,7 @@ input {
     justify-self: left;
 }
 
-.sidebar {
+#sidebar {
     padding: clamp(0.1rem, 1vw, 1rem);
     background: linear-gradient(285deg, var(--sidebar-color) 65%, var(--flair-color));
     color: white;
@@ -237,7 +256,7 @@ input {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1.5rem 1fr repeat(2,1.5rem) 1fr;
-    gap: 1vw 2vw;
+    gap: 1vw;
 }
 
 .content {
@@ -245,7 +264,7 @@ input {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-template-rows: repeat(3, 1fr);
-    gap: 2vw;
+    gap: 1vw;
 }
 
 .content-block {
@@ -277,6 +296,11 @@ input {
 .trending-header {
     align-self: center;
 }
+
+.projects-header {
+    margin-bottom: 1rem;
+}
+
 
 .project-icons {
     grid-column: 2 / 3;
@@ -401,11 +425,15 @@ input {
 
 .search-icon {
     background: var(--search) no-repeat right;
+    padding: 10px;
+    position: relative;
+    left: 59%;
 }
 
 .notifications-icon {
     background: var(--notifications) no-repeat right;
     padding: 10px;
+    position: relative;
 }
 
 .fav-icon {
@@ -581,5 +609,81 @@ input {
     }
     75.02% {
       border: solid 3px rgba(255, 255, 255, 0);
+    }
+  }
+
+
+  @media only screen and (max-width: 1080px) {
+    
+    body {
+        display: block;
+        grid: 1fr / minmax(200px, 17vw) 1fr;
+    }
+
+    #hamburger {
+        display: grid;
+        position: fixed;
+        right: 5vw;
+        top: 0.5rem;
+        z-index: 1;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-image: var(--paw-menu);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 1px solid black;
+        text-align: center;
+        border-radius: 10px;
+        z-index: 5;
+    }
+
+    #sidebar {
+        font-size: 1rem;
+        width: 23vw;
+        display: none;
+        position: fixed;
+        top: 0;
+        padding: 2rem 0.5rem;
+        border-radius: 0px 0px 2rem 0px;
+        opacity: 75%;
+        z-index: 2;
+    }
+
+    .search-icon {
+        left: 48%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    header-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input {
+        width: 40%;
+    }
+
+    .search-icon {
+        left: 37%;
+    }
+
+    .username {
+        width: 20vw;
+    }
+
+    .container {
+        display: block;
+   } 
+
+    .content {
+        gap: 2vh;
+    }
+
+    .announcements-header,
+    .trending-header {
+        margin: 1rem 0rem;
     }
   }

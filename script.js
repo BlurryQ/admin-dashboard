@@ -126,3 +126,33 @@ function removeBorder(id) {
         content.classList.remove("addUnderline")
     }
 }
+
+const hamburger = document.getElementById("hamburger")
+const sidebar = document.getElementById("sidebar")
+let windowResize = window.addEventListener("resize", () => {
+    resizePage()
+})
+
+hamburger.addEventListener("click", () => {
+    toggleHamburger()
+})
+
+function resizePage() {
+    let windowWidth = window.screen.availWidth
+    if(windowWidth <= 1080) {
+        sidebar.style.display = "none"
+    } else {
+        sidebar.style.display = "grid"
+        toggleHamburger(true)
+    }
+}
+
+function toggleHamburger(turnOff) {
+    if(turnOff) {
+        sidebar.style.display === "grid"
+    } else if(sidebar.style.display === "none" || !sidebar.style.display) {
+        sidebar.style.display = "grid"
+    } else {
+        sidebar.style.display = "none"
+    }
+}
